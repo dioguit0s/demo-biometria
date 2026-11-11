@@ -36,14 +36,3 @@ src/telas/Bloqueio.tsx  tela de bloqueio que abre o prompt sozinha
 src/telas/Home.tsx   saldo oculto, Pix com biometria, switch e painel de diagnóstico
 ```
 
-## Roteiro da gravação (~2–3 min)
-
-1. Abrir o app → tela de login. Entrar com `12345678901` / `1234`.
-2. Aparece "Entrar com biometria?" → **Ativar** → prompt nativo → confirmar.
-3. Na home, mostrar o **painel de diagnóstico** (o que a API devolve sobre o aparelho).
-4. Tocar no saldo → biometria → saldo aparece.
-5. **Fazer Pix** → biometria → saldo cai R$ 50.
-6. Mandar o app para o segundo plano, esperar 5 s, voltar → **tela de bloqueio**.
-7. Cancelar o prompt → mensagem "Autenticação cancelada." → "Tentar de novo" → desbloqueia.
-8. (Opcional) Errar a digital várias vezes para mostrar o fallback para a senha do aparelho.
-
