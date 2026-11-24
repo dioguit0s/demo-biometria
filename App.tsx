@@ -9,7 +9,7 @@ import { cores } from './src/estilo';
 
 type Estado = 'carregando' | 'login' | 'bloqueado' | 'home';
 
-// Tempo em segundo plano antes de pedir biometria de novo (bancos usam 0–5 min).
+// Tempo em segundo plano antes de pedir biometria de novo (apps costumam usar de 0 a 5 min).
 const TEMPO_BLOQUEIO_MS = 5_000;
 
 export default function App() {

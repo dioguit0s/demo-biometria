@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Banco Demo",
+    "name": "Demo Biometria",
     "slug": "demo-biometria",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,7 +14,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.exemplo.bancodemo"
+      "package": "com.exemplo.demobiometria"
     },
     "web": {
       "favicon": "./assets/favicon.png"

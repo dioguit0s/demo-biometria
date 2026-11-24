@@ -28,11 +28,11 @@ export async function encerrarSessao() {
   await SecureStore.deleteItemAsync(CHAVE_BIOMETRIA);
 }
 
-/** Simula a API do banco. Na vida real: POST /login -> token JWT. */
-export async function loginFake(cpf: string, senha: string): Promise<string> {
+/** Simula a API de login. Na vida real: POST /login -> token JWT. */
+export async function loginFake(email: string, senha: string): Promise<string> {
   await new Promise((r) => setTimeout(r, 600));
-  if (cpf.replace(/\D/g, '').length !== 11 || senha.length < 4) {
-    throw new Error('CPF ou senha inválidos');
+  if (!/^\S+@\S+\.\S+$/.test(email.trim()) || senha.length < 4) {
+    throw new Error('E-mail ou senha inválidos');
   }
   return `token-${Date.now()}`;
 }

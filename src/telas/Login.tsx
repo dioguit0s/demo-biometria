@@ -7,7 +7,7 @@ import { e } from '../estilo';
 type Props = { onEntrou: () => void };
 
 export default function Login({ onEntrou }: Props) {
-  const [cpf, setCpf] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState('');
@@ -16,7 +16,7 @@ export default function Login({ onEntrou }: Props) {
     setErro('');
     setCarregando(true);
     try {
-      const token = await loginFake(cpf, senha);
+      const token = await loginFake(email, senha);
       await salvarToken(token);
       await oferecerBiometria();
       onEntrou();
@@ -27,7 +27,7 @@ export default function Login({ onEntrou }: Props) {
     }
   }
 
-  // Igual aos apps de banco: depois do 1º login com senha, pergunta se quer ativar.
+  // Depois do 1º login com senha, pergunta se o usuário quer ativar a biometria.
   async function oferecerBiometria() {
     const suporte = await checarSuporte();
     if (!suporte.temHardware || !suporte.temCadastro) return;
@@ -51,16 +51,16 @@ export default function Login({ onEntrou }: Props) {
 
   return (
     <View style={e.tela}>
-      <Text style={e.titulo}>Banco Demo</Text>
-      <Text style={e.sub}>Entre com CPF e senha</Text>
+      <Text style={e.titulo}>Demo Biometria</Text>
+      <Text style={e.sub}>Entre com e-mail e senha</Text>
 
       <TextInput
         style={e.input}
-        placeholder="CPF (11 dígitos)"
-        keyboardType="number-pad"
-        value={cpf}
-        onChangeText={setCpf}
-        maxLength={14}
+        placeholder="E-mail"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={e.input}

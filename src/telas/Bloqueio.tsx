@@ -10,12 +10,12 @@ export default function Bloqueio({ onDesbloqueou, onUsarSenha }: Props) {
 
   async function tentar() {
     setMensagem('');
-    const r = await autenticar('Desbloqueie o Banco Demo');
+    const r = await autenticar('Desbloqueie o Demo Biometria');
     if (r.ok) onDesbloqueou();
     else setMensagem(r.mensagem);
   }
 
-  // Abre o prompt assim que a tela aparece, como nos apps de banco.
+  // Abre o prompt assim que a tela aparece.
   useEffect(() => {
     tentar();
   }, []);
@@ -33,7 +33,7 @@ export default function Bloqueio({ onDesbloqueou, onUsarSenha }: Props) {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={onUsarSenha}>
-        <Text style={[e.link, { color: '#fff' }]}>Entrar com CPF e senha</Text>
+        <Text style={[e.link, { color: '#fff' }]}>Entrar com e-mail e senha</Text>
       </TouchableOpacity>
 
       {!!mensagem && <Text style={[e.erro, { color: '#FFD4D4' }]}>{mensagem}</Text>}
