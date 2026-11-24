@@ -36,11 +36,10 @@ src/telas/Bloqueio.tsx  tela de bloqueio que abre o prompt sozinha
 src/telas/Home.tsx   valor protegido, switch da biometria e painel de diagnóstico
 ```
 
-## Prints para a apresentação
+## Prints
 
-1. Entrar com `teste@exemplo.com` / `1234` e ativar a biometria.
-2. **Print 1:** home com o card “Valor protegido” mostrando `R$ ••••••`.
-3. Tocar no card. **Print 2:** janela de verificação biométrica do Android.
-4. Encostar a digital. **Print 3:** home com o valor à mostra.
+| 1. Valor oculto | 2. Verificação biométrica | 3. Valor à mostra |
+| :---: | :---: | :---: |
+| <img src="docs/prints/1-valor-oculto.png" width="220" alt="Tela com o valor oculto"> | <img src="docs/prints/2-verificacao.png" width="220" alt="Janela de verificação biométrica do Android"> | <img src="docs/prints/3-valor-a-mostra.png" width="220" alt="Tela com o valor à mostra"> |
 
-Se o print 2 sair preto (alguns aparelhos bloqueiam captura da janela de digital), tirem uma foto da tela com outro celular.
+Para reproduzir: entre com `teste@exemplo.com` / `1234`, ative a biometria e toque no card “Valor protegido”.
